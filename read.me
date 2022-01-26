@@ -1,0 +1,13 @@
+This repo uses docker, with a python image as well as a Mongo image
+I used a premade API that will take care of the shortener
+
+I originally worked in a base62 algorithm to take care of shortening the URL, however it was heavy and it ended up taking too long 
+so i opted for pyshorteners
+
+#How to run it
+Simply run docker-compose up --build to take care of the build and running of the container.
+
+The api is currently running on http://127.0.0.1:8000
+the current API can be reached through the following methods
+    http://127.0.0.1:8000/docs
+which will give an apt description of each endpoint

@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  backend-api:
+    build: ./src
+    ports: 
+      - 443:80
+    tty: true
+    links:
+        - mongo-service
+        
+  mongo-service:
+    image: mongo:latest
+    hostname: test_mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=uploads
+      - MONGO_INITDB_ROOT_USERNAME=magnifio_dbaUser
+      - MONGO_INITDB_ROOT_PASSWORD=xyz123
+    ports:
+      - 27017:27017 
+    
